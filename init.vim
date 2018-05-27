@@ -6,13 +6,36 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ashisha/image.vim'
 Plug 'kien/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 set number
 set expandtab
 set tabstop=2
-syntax on
+set shiftwidth=2
 
+" Search
+set ignorecase
+set smartcase
+
+syntax on
+filetype plugin indent on
+
+set cmdheight=2
+set pastetoggle=<F11>
+
+" Haskell highlights
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
+
+" Python support
 let g:python3_host_prog = 'C:\Users\Nikolay\AppData\Local\Programs\Python\Python36\python.exe'
 let g:python_host_prog = 'C:\Python27\python.exe'
 
@@ -24,3 +47,4 @@ set background=dark
 " Mappings
 map <C-n> :NERDTreeToggle<CR>
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+nnoremap <C-L> :nohl<CR><C-L>
