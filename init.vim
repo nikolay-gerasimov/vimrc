@@ -56,3 +56,6 @@ set background=dark
 map <C-n> :NERDTreeToggle<CR>
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <C-Q> :q!<CR>
+inoremap <C-Q> :q!<CR>
+vnoremap <C-Q> :q!<CR>
